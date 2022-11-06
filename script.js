@@ -52,11 +52,11 @@ btn.addEventListener("click", (e) => {
     e.preventDefault()
 
     let email = document.forms['login_form']['email'].value
+    console.log(email)
     let password = document.forms['login_form']['password'].value
-
     if (email.length >= 5 && email.length <= 20) {
-        let start_with_letter = /^[A-Za-z]+[A-Za-z0-9]*$/;
-        if (email.match(start_with_letter)) {
+        
+        if (email.charAt(0) >= 'a' && email.charAt(0) <= 'z') {
             if (password.length >= 8) {
                 let control_character = /[!@#$%&]+/
                 if (password.match(control_character)) {
